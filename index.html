@@ -1,254 +1,169 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Loomie, AI automation agency</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Loomie | AI automation for small and medium-sized businesses</title>
+<meta name="description" content="Loomie automates repetitive work so tasks that take hours take minutes, without changing the tools you already use.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-body{margin:0}html{scroll-behavior:smooth}
-a{color:#0F6E56}a:hover{color:#0B3D33}
-details summary{cursor:pointer;list-style:none}details summary::-webkit-details-marker{display:none}
-.card{background:#F6F8F7;border:1px solid #D5E0DC;border-radius:16px;padding:28px}
+:root{--ink:#07130F;--g:#0F6E56;--mint:#6EF3C0;--cream:#F5F2EA;--t:#0E2A25;--m:#3E534D}
+*{box-sizing:border-box}html{scroll-behavior:smooth}[hidden]{display:none!important}
+body{margin:0;font:17px/1.65 'Instrument Sans',system-ui,sans-serif;color:var(--t);background:var(--cream)}
+h1,h2,h3{font-family:'Bricolage Grotesque',system-ui,sans-serif;line-height:1.05;letter-spacing:-.03em;margin:0}
+a{color:inherit}.w{max-width:1120px;margin:0 auto;padding:0 24px}
+.eb{font-size:13px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--g);margin:0 0 16px}
+nav{position:fixed;inset:0 0 auto;z-index:9;transition:background .3s}nav.s{background:rgba(7,19,15,.88);backdrop-filter:blur(12px)}
+nav .w{display:flex;align-items:center;justify-content:space-between;height:70px}
+.logo{font:700 26px 'Bricolage Grotesque',sans-serif;color:#fff;text-decoration:none}.logo i{color:var(--mint);font-style:normal}
+.nl{display:flex;gap:28px;align-items:center}.nl a:not(.btn){color:#cfe3dc;text-decoration:none;font-size:15px}.nl a:not(.btn):hover{color:#fff}
+.btn{display:inline-block;padding:14px 26px;border-radius:99px;background:var(--mint);color:var(--ink)!important;font-weight:600;text-decoration:none;transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 32px rgba(110,243,192,.35)}.btn.o{background:transparent;color:#fff!important;border:1px solid rgba(255,255,255,.3)}
+.hero{position:relative;overflow:hidden;background:var(--ink);color:#fff;padding:150px 0 110px}
+.glow{position:absolute;inset:0;background:radial-gradient(620px circle at var(--x,72%) var(--y,30%),rgba(110,243,192,.17),transparent 60%)}
+.th{position:absolute;inset:0;width:100%;height:100%;opacity:.55}
+.th path{fill:none;stroke:var(--mint);stroke-width:1;stroke-dasharray:5 15;animation:fl 20s linear infinite}
+.th path:nth-child(2n){animation-duration:30s;opacity:.6}.th path:nth-child(3n){animation-direction:reverse}
+@keyframes fl{to{stroke-dashoffset:-400}}
+.hero .w{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+.hero h1{font-size:clamp(46px,6.6vw,88px)}.hero h1 em{font-style:normal;color:var(--mint)}
+.hero p.lead{color:#b9d1c9;font-size:20px;max-width:520px;margin:26px 0 38px}.hero .bt{display:flex;gap:14px;flex-wrap:wrap}
+.pn{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:22px;padding:30px;backdrop-filter:blur(10px);animation:fy 7s ease-in-out infinite}
+@keyframes fy{50%{transform:translateY(-12px)}}
+.pn small{color:#8fb1a6;letter-spacing:2px;text-transform:uppercase;font-size:12px}
+.r{margin-top:24px}.r div{display:flex;justify-content:space-between;font-size:15px;margin-bottom:9px}.r b{color:var(--mint);font-weight:600}
+.bar{height:9px;border-radius:9px;background:rgba(255,255,255,.1);overflow:hidden}
+.bar i{display:block;height:100%;width:100%;background:linear-gradient(90deg,var(--g),var(--mint));border-radius:9px;animation:sh 6s cubic-bezier(.7,0,.2,1) infinite}
+@keyframes sh{0%,10%{width:100%}42%,88%{width:var(--to)}100%{width:100%}}
+.mq{background:var(--mint);color:var(--ink);overflow:hidden;white-space:nowrap;padding:20px 0;font:600 24px 'Bricolage Grotesque',sans-serif}
+.mq div{display:inline-block;animation:mq 30s linear infinite}.mq span{margin:0 30px}.mq span:after{content:"\2726";margin-left:60px;opacity:.5}
+@keyframes mq{to{transform:translateX(-50%)}}
+.sec{padding:112px 0}.sec h2{font-size:clamp(34px,4.6vw,58px);max-width:760px}
+.ab{display:grid;grid-template-columns:1.2fr .8fr;gap:64px;align-items:start}.ab p{color:var(--m);font-size:19px;margin:22px 0 0}
+.ask{font:600 clamp(22px,2.6vw,30px)/1.25 'Bricolage Grotesque',sans-serif;color:var(--t)!important;letter-spacing:-.02em;margin-top:34px!important}
+.fc{background:#fff;border:1px solid #dcd8cc;border-radius:20px;padding:26px;margin-bottom:16px;transition:transform .3s,box-shadow .3s}
+.fc:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(14,42,37,.1)}
+.fc b{display:block;font:700 40px 'Bricolage Grotesque',sans-serif;color:var(--g);letter-spacing:-.03em}.fc span{color:var(--m);font-size:15px}
+.dk{background:var(--ink);color:#fff}.dk .eb{color:var(--mint)}
+.tabs{display:grid;grid-template-columns:300px 1fr;gap:36px;margin-top:52px}.tl{display:flex;flex-direction:column;gap:10px}
+.tl button{text-align:left;padding:18px 22px;border:1px solid rgba(255,255,255,.16);border-radius:16px;background:transparent;font:600 17px 'Instrument Sans',sans-serif;color:#cfe3dc;cursor:pointer;transition:all .25s}
+.tl button:hover{border-color:var(--mint)}.tl button[aria-pressed=true]{background:var(--mint);color:var(--ink);border-color:var(--mint);transform:translateX(10px)}
+.tp{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:26px;padding:46px;animation:in .5s}
+@keyframes in{from{opacity:0;transform:translateY(16px)}}
+.tp h3{font-size:36px;color:var(--mint);margin-bottom:22px}.tp p{font-size:19px;color:#dcebe6;margin:0}.tp mark{background:rgba(110,243,192,.18);color:var(--mint);padding:0 6px;border-radius:6px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:52px}
+.st{background:#fff;border:1px solid #dcd8cc;border-radius:22px;padding:34px}.st b{font:700 64px 'Bricolage Grotesque',sans-serif;color:var(--mint);-webkit-text-stroke:1.5px var(--g);letter-spacing:-.04em}
+.st h3{font-size:25px;margin:8px 0 10px}.st p{margin:0;color:var(--m)}
+.cta{background:var(--g);color:#fff;text-align:center;padding:110px 0}.cta h2{margin:0 auto 34px;color:#fff}
+.cta .btn{background:#fff;font-size:18px;padding:18px 36px}
+.card{background:#fff;border:1px solid #dcd8cc;border-radius:20px;padding:30px}
 .card label{display:block;margin:0 0 6px;font-size:14px;font-weight:600}
-.card input{box-sizing:border-box;width:100%;padding:13px 14px;margin:0 0 18px;font:inherit;color:#0E2A25;background:#fff;border:1px solid #BFD0CA;border-radius:8px}
-.card input:focus{outline:2px solid #0F6E56;outline-offset:1px;border-color:#0F6E56}
-.card button{width:100%;padding:15px;font:inherit;font-weight:600;color:#fff;background:#0F6E56;border:0;border-radius:8px;cursor:pointer}
-.card button:hover{background:#0B3D33}.card button:disabled{opacity:.6;cursor:wait}
-.card button.ghost{background:transparent;color:#0E2A25;border:2px solid #0E2A25}
-.card .links{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;margin-top:18px;font-size:15px}
-#auth-msg{margin:14px 0 0;min-height:22px;font-size:15px;color:#3E534D}
-#auth-msg.err{color:#B3261E}#auth-msg.ok{color:#0F6E56}
-[hidden]{display:none!important}
-</style>
-</head>
-<body>
+.card input{width:100%;padding:13px 14px;margin:0 0 18px;font:inherit;color:var(--t);background:#fff;border:1px solid #bfd0ca;border-radius:10px}
+.card input:focus{outline:2px solid var(--g);outline-offset:1px}
+.card button{width:100%;padding:15px;font:inherit;font-weight:600;color:#fff;background:var(--g);border:0;border-radius:99px;cursor:pointer}
+.card button:hover{background:#0B3D33}.card button:disabled{opacity:.6;cursor:wait}.card button.ghost{background:transparent;color:var(--t);border:2px solid var(--t)}
+.card .links{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;margin-top:18px;font-size:15px}.card a{color:var(--g)}
+#auth-msg{margin:14px 0 0;min-height:22px;font-size:15px;color:var(--m)}#auth-msg.err{color:#B3261E}#auth-msg.ok{color:var(--g)}
+footer{background:var(--ink);color:#8fb1a6;text-align:center;padding:36px 24px;font-size:14px}
+.rv{opacity:0;transform:translateY(34px);transition:opacity .9s,transform .9s}.rv.on{opacity:1;transform:none}
+@media(max-width:860px){.hero .w,.ab,.tabs,.steps{grid-template-columns:1fr}.hm{display:none}.nl{gap:16px}.tp{padding:30px}.sec{padding:80px 0}.tl button[aria-pressed=true]{transform:none}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
 
+.nl .btn{padding:11px 20px;font-size:15px}
+dialog{border:0;padding:0;border-radius:26px;width:min(780px,calc(100% - 24px));max-height:calc(100dvh - 24px);background:#fff;color:var(--t);box-shadow:0 40px 120px rgba(0,0,0,.45);overflow:auto}
+dialog[open]{animation:pop .35s cubic-bezier(.2,.9,.3,1.2)}dialog::backdrop{background:rgba(7,19,15,.72);backdrop-filter:blur(6px)}
+@keyframes pop{from{opacity:0;transform:translateY(24px) scale(.97)}}body:has(dialog[open]){overflow:hidden}
+.bk{position:relative;padding:40px 40px calc(36px + env(safe-area-inset-bottom))}.bk h2{font-size:clamp(28px,4vw,38px);margin-bottom:10px;padding-right:48px}
+.bk-x{position:absolute;top:14px;right:14px;width:44px;height:44px;border:0;border-radius:50%;background:#eef2f0;font-size:26px;cursor:pointer;color:var(--t)}
+.bk-sub{color:var(--m);margin:0 0 22px}.bk-g{display:grid;grid-template-columns:1fr 1fr;gap:16px}.bk-g .full{grid-column:1/-1}
+.bk label{display:block;font-size:14px;font-weight:600}
+.bk input{display:block;width:100%;margin-top:6px;padding:14px;font:inherit;font-size:16px;border:1px solid #bfd0ca;border-radius:12px;background:#fff;color:var(--t)}.bk input:focus{outline:2px solid var(--g);outline-offset:1px}
+.bk .btn{background:var(--g);color:#fff!important;border:0;font:600 17px 'Instrument Sans',sans-serif;cursor:pointer;padding:16px 30px}.bk .btn.full{width:100%}.bk .btn:disabled{opacity:.4;cursor:not-allowed;transform:none;box-shadow:none}
+.bk-e{color:#B3261E;font-size:15px;margin:0}.bk-two{display:grid;grid-template-columns:1.1fr .9fr;gap:32px}
+.bk-h{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}.bk-h b{font-size:18px}
+.bk-h button{width:44px;height:44px;border-radius:50%;border:1px solid #cfd8d3;background:#fff;font-size:24px;cursor:pointer}.bk-h button:disabled{opacity:.3;cursor:default}
+.bk-w,.bk-d{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;text-align:center}.bk-w span{font-size:12px;font-weight:600;color:#6B7F79;padding:6px 0}
+.bk-d button,.bk-s button{border:1px solid transparent;border-radius:12px;font:600 16px 'Instrument Sans',sans-serif;cursor:pointer;color:var(--t);transition:background .15s,color .15s}
+.bk-d button{min-height:44px;background:#eaf5f0}.bk-d .off{background:transparent;color:#b5c1bc;cursor:default}.bk-d .full{background:#f3f1ea;color:#b5c1bc;text-decoration:line-through;cursor:not-allowed}
+.bk-s{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;max-height:350px;overflow:auto;padding:2px}.bk-s button{padding:13px 4px;background:#fff;border-color:#bfd0ca}
+.bk-s .x{background:#f3f1ea;color:#aab6b1;border-color:transparent;text-decoration:line-through;cursor:not-allowed}
+.bk-d button.ok:hover,.bk-s button:not(.x):hover{background:var(--mint)}.bk-d .on,.bk-s .on,.bk-d .on:hover,.bk-s .on:hover{background:var(--g);color:#fff;border-color:var(--g)}
+.hint{color:var(--m);margin:0}.bk-pick{font-weight:600;color:var(--g);margin:22px 0 6px;min-height:26px}
+.bk-bt{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:10px}.bk-bk{background:none;border:0;font:inherit;color:var(--m);cursor:pointer;padding:12px 0}
+.bk-done{text-align:center}.tick{width:80px;height:80px;margin:6px auto 20px;border-radius:50%;background:var(--g);color:#fff;font-size:40px;line-height:80px;animation:pop .6s}.bk-done p{color:var(--m)}
+@media(max-width:860px){.hero{padding:118px 0 80px}.hero .bt .btn{flex:1;text-align:center}.mq{font-size:20px}.cta{padding:80px 0}.fc b{font-size:34px}.nl a:not(.btn){font-size:14px}.tp h3{font-size:28px}}
+@media(max-width:640px){dialog{width:100%;max-width:100%;height:100dvh;max-height:100dvh;border-radius:0}.bk{padding:26px 18px calc(28px + env(safe-area-inset-bottom))}.bk-g,.bk-two{grid-template-columns:1fr}.bk-s{grid-template-columns:repeat(4,1fr);max-height:none}.bk-bt{flex-direction:column-reverse;align-items:stretch}.bk-bt .btn{width:100%}}
+@media(max-width:380px){.logo{font-size:22px}.nl{gap:10px}.nl .btn{padding:10px 14px}}
+@media(hover:none){.btn:hover,.fc:hover{transform:none;box-shadow:none}}
+</style></head><body>
+<nav id="nav"><div class="w"><a class="logo" href="#top">Loomie<i>.</i></a>
+<div class="nl"><a class="hm" href="#who">Who we help</a><a class="hm" href="#how">How it works</a><a href="#client-login" id="nav-login">Client login</a><a class="btn" href="#book" data-book>Book a chat</a></div></div></nav>
 
-<div style="font-family: 'Instrument Sans', system-ui, sans-serif; color: #0E2A25; background: #F6F8F7; line-height: 1.6; font-size: 17px" data-canvas-width="1360" data-canvas-height="5200" data-document-role="page" data-label="Loomie website">
+<header class="hero" id="top"><div class="glow"></div><svg class="th" viewBox="0 0 1400 700" preserveAspectRatio="none" aria-hidden="true"><path d="M-50 120 C 250 -20, 500 280, 800 90 S 1150 240, 1500 60"/><path d="M-50 220 C 250 80, 500 380, 800 190 S 1150 340, 1500 160"/><path d="M-50 320 C 250 180, 500 480, 800 290 S 1150 440, 1500 260"/><path d="M-50 420 C 250 280, 500 580, 800 390 S 1150 540, 1500 360"/><path d="M-50 520 C 250 380, 500 680, 800 490 S 1150 640, 1500 460"/><path d="M-50 620 C 250 480, 500 780, 800 590 S 1150 740, 1500 560"/></svg>
+<div class="w"><div>
+<h1>Win back the <em>hours</em> your team loses.</h1>
+<p class="lead">We automate the copying, the repeated emails and the reports, so work that takes hours today takes minutes. Without changing the tools you already use.</p>
+<div class="bt"><a class="btn" href="#book" data-book>Book a 20-minute chat</a><a class="btn o" href="#who">See who we help</a></div></div>
+<div class="pn" aria-hidden="true"><small>Time per task, before and after</small>
+<div class="r"><div><span>Copying data</span><b>3 h &rarr; 5 min</b></div><div class="bar"><i style="--to:4%"></i></div></div>
+<div class="r"><div><span>Answering the same emails</span><b>2 h &rarr; 10 min</b></div><div class="bar"><i style="--to:8%"></i></div></div>
+<div class="r"><div><span>Preparing reports</span><b>2 days &rarr; every morning</b></div><div class="bar"><i style="--to:3%"></i></div></div></div>
+</div></header>
 
-<header style="background: #F6F8F7; border-bottom: 1px solid #D5E0DC; padding: 0 24px">
-<div style="max-width: 1160px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 32px; padding: 16px 0">
-<a href="#top" style="display: flex; align-items: center; gap: 12px; text-decoration: none; color: #0E2A25">
-<svg width="44" height="44" sc-camel-view-box="0 0 160 160" aria-hidden="true"><rect width="160" height="160" rx="36" fill="#0F6E56"></rect><rect x="25" y="50" width="110" height="14" rx="7" fill="#F2B84B"></rect><rect x="25" y="80" width="110" height="14" rx="7" fill="#F2B84B"></rect><rect x="25" y="110" width="110" height="14" rx="7" fill="#F2B84B"></rect><rect x="43" y="25" width="14" height="110" rx="7" fill="#FFFFFF"></rect><rect x="73" y="25" width="14" height="110" rx="7" fill="#FFFFFF"></rect><rect x="103" y="25" width="14" height="110" rx="7" fill="#FFFFFF"></rect><rect x="43" y="50" width="14" height="14" fill="#F2B84B"></rect><rect x="103" y="50" width="14" height="14" fill="#F2B84B"></rect><rect x="73" y="80" width="14" height="14" fill="#F2B84B"></rect><rect x="43" y="110" width="14" height="14" fill="#F2B84B"></rect><rect x="103" y="110" width="14" height="14" fill="#F2B84B"></rect></svg>
-<span style="font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-weight: 700; font-size: 28px; letter-spacing: -0.5px">Loomie</span>
-</a>
-<nav aria-label="Main" style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 28px; font-size: 16px; font-weight: 500">
-<a href="#services" style="color: #0E2A25; text-decoration: none">Services</a>
-<a href="#industries" style="color: #0E2A25; text-decoration: none">Industries</a>
-<a href="#process" style="color: #0E2A25; text-decoration: none">How we work</a>
-<a href="#experience" style="color: #0E2A25; text-decoration: none">Experience</a>
-<a href="#about" style="color: #0E2A25; text-decoration: none">About</a>
-<a href="#client-login" id="nav-login" style="color: #0E2A25; text-decoration: none">Client login</a>
-<a href="#contact" style="background: #0F6E56; color: #FFFFFF; text-decoration: none; padding: 12px 22px; border-radius: 8px; min-height: 20px">Book a call</a>
-</nav>
-</div>
-</header>
+<div class="mq" aria-hidden="true"><div><span>Copying data</span><span>Answering the same emails</span><span>Preparing reports</span><span>Sorting documents</span><span>Chasing approvals</span><span>Updating spreadsheets</span><span>Copying data</span><span>Answering the same emails</span><span>Preparing reports</span><span>Sorting documents</span><span>Chasing approvals</span><span>Updating spreadsheets</span></div></div>
 
-<section id="top" style="padding: 88px 24px 80px">
-<div style="max-width: 1160px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; gap: 56px">
-<div style="flex: 1 1 480px; min-width: 0">
-<p style="margin: 0 0 16px; font-size: 14px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: #0F6E56">AI automation agency</p>
-<h1 style="margin: 0 0 24px; font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-weight: 700; font-size: 64px; line-height: 1.05; letter-spacing: -1.5px">Get your team's hours back.</h1>
-<p style="margin: 0 0 36px; font-size: 20px; color: #3E534D; max-width: 560px">Loomie turns repetitive manual work, like data entry, paperwork, reports and customer messages, into simple AI automations that run on their own. What took hours or days takes minutes.</p>
-<div style="display: flex; flex-wrap: wrap; gap: 14px">
-<a href="#contact" style="background: #0F6E56; color: #FFFFFF; text-decoration: none; font-weight: 600; padding: 16px 28px; border-radius: 8px">Book a free intro call</a>
-<a href="#services" style="background: transparent; color: #0E2A25; text-decoration: none; font-weight: 600; padding: 14px 26px; border-radius: 8px; border: 2px solid #0E2A25">See what we automate</a>
-</div>
-</div>
-<div style="flex: 1 1 380px; min-width: 0; background: #FFFFFF; border: 1px solid #D5E0DC; border-radius: 16px; padding: 28px; display: flex; flex-direction: column; gap: 14px">
-<p style="margin: 0; font-size: 14px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: #3E534D">Typical things we take off your plate</p>
-<div style="display: flex; align-items: center; gap: 12px; padding: 16px; background: #F6F8F7; border-radius: 10px"><span style="flex: 1 1 0; min-width: 0; font-weight: 500">Invoices and customs documents</span><span style="color: #0F6E56; font-weight: 700">→</span><span style="flex: 1 1 0; min-width: 0; font-weight: 600; color: #0F6E56">Entered in your ERP</span></div>
-<div style="display: flex; align-items: center; gap: 12px; padding: 16px; background: #F6F8F7; border-radius: 10px"><span style="flex: 1 1 0; min-width: 0; font-weight: 500">Guest and customer messages</span><span style="color: #0F6E56; font-weight: 700">→</span><span style="flex: 1 1 0; min-width: 0; font-weight: 600; color: #0F6E56">Answered and routed</span></div>
-<div style="display: flex; align-items: center; gap: 12px; padding: 16px; background: #F6F8F7; border-radius: 10px"><span style="flex: 1 1 0; min-width: 0; font-weight: 500">Contracts and PDFs</span><span style="color: #0F6E56; font-weight: 700">→</span><span style="flex: 1 1 0; min-width: 0; font-weight: 600; color: #0F6E56">Structured, searchable data</span></div>
-<div style="display: flex; align-items: center; gap: 12px; padding: 16px; background: #F6F8F7; border-radius: 10px"><span style="flex: 1 1 0; min-width: 0; font-weight: 500">Weekly reports in Excel</span><span style="color: #0F6E56; font-weight: 700">→</span><span style="flex: 1 1 0; min-width: 0; font-weight: 600; color: #0F6E56">Built and sent automatically</span></div>
-</div>
-</div>
-</section>
+<section class="sec" id="about"><div class="w ab"><div class="rv">
+<p class="eb">About us</p><h2>We’re Loomie.</h2>
+<p>We help small and medium-sized businesses win back the hours their teams lose to repetitive work: copying data, answering the same emails, preparing reports.</p>
+<p>Between us we cover both sides. One of us is an AI engineer with over five years of experience; the other comes from operations management and knows exactly where lost time hides. We turn tasks that take hours into minutes, keep it simple, and work inside the tools you already use.</p>
+<p class="ask">Have twenty minutes to spare? Let’s find the one process that costs your team the most time.</p></div>
+<div class="rv" style="transition-delay:.15s"><div class="fc"><b>5+ years</b><span>AI engineering experience</span></div><div class="fc"><b>Ops</b><span>Operations management, where lost time hides</span></div><div class="fc"><b>Hours &rarr; minutes</b><span>On the tools you already use</span></div></div></div></section>
 
-<section style="padding: 0 24px 80px">
-<div style="max-width: 1160px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 20px">
-<div style="flex: 1 1 340px; min-width: 0; padding: 24px 28px; background: #FFFFFF; border: 1px solid #D5E0DC; border-radius: 12px">
-<p style="margin: 0 0 6px; font-weight: 600; color: #0F6E56">Operations experience</p>
-<p style="margin: 0; color: #3E534D">Property operations, public-sector projects and international logistics. We know how real teams work.</p>
-</div>
-<div style="flex: 1 1 340px; min-width: 0; padding: 24px 28px; background: #FFFFFF; border: 1px solid #D5E0DC; border-radius: 12px">
-<p style="margin: 0 0 6px; font-weight: 600; color: #0F6E56">AI engineering depth</p>
-<p style="margin: 0; color: #3E534D">Over five years across machine learning, NLP and the latest language models, including agentic AI.</p>
-</div>
-</div>
-</section>
+<section class="sec dk" id="who"><div class="w"><div class="rv"><p class="eb">Who we help</p><h2>Built for the way your business really works.</h2></div>
+<div class="tabs rv"><div class="tl">
+<button aria-pressed="true">Law firms &amp; advisory</button><button aria-pressed="false">Property &amp; accommodation</button><button aria-pressed="false">Logistics &amp; trade</button><button aria-pressed="false">Management &amp; data</button></div>
+<div><div class="tp"><h3>Judgment, not transcription.</h3><p>Your team spends a large part of the day reading, sorting and re-typing data from documents. Our AI agents extract the key information from contracts and case files, structure it and store it in your system, with full traceability and human review at the critical points. Your lawyers get their time back for legal judgment. We start with a pilot on one document type you choose, such as NDAs or engagement letters, so you can measure the real savings before committing to anything.</p></div>
+<div class="tp" hidden><h3>Every unit, at a glance.</h3><p>Running apartments means juggling cleanings, bookings, incidents and supplies, usually across spreadsheets and scattered messages. One of us has optimized work protocols and cut supply costs at an apartment company, so we know this business from the inside. We automate task assignment, team notifications and inventory control, so your staff prepare each unit faster and you see the status of everything at a glance.</p></div>
+<div class="tp" hidden><h3>Less typing, fewer errors.</h3><p>Customs paperwork is meticulous, and one mistake costs money: re-exports, transit, transfers between bonded and regular warehouses. Ivan has managed that flow inside an ERP, and Alek builds the systems that speed it up. Our agents read the documents, check them for inconsistencies, pre-load the data into your ERP and flag exceptions for a person to review. Less typing, fewer errors, faster turnaround.</p></div>
+<div class="tp" hidden><h3>The report arrives every morning.</h3><p>Most companies already have the data, but nobody has the time to turn it into decisions. We build automated pipelines that collect information from your sources, clean it and present it in dashboards with plain-language conclusions. We’ve worked with clients across very different sectors, and we train your team so the tool actually gets used. The report that takes days today arrives every morning without anyone lifting a finger.</p></div></div></div></div></section>
 
-<section style="padding: 80px 24px; background: #FFFFFF; border-top: 1px solid #D5E0DC; border-bottom: 1px solid #D5E0DC">
-<div style="max-width: 1160px; margin: 0 auto">
-<h2 style="margin: 0 0 16px; font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-weight: 700; font-size: 40px; line-height: 1.15; letter-spacing: -0.8px; max-width: 720px">Where your team's time quietly disappears</h2>
-<p style="margin: 0 0 40px; font-size: 19px; color: #3E534D; max-width: 720px">We have seen how much time teams lose to repetitive manual tasks. Most of it is rule-based work that software can do, with a person checking the result.</p>
-<div style="display: flex; flex-wrap: wrap; gap: 20px">
-<div style="flex: 1 1 260px; min-width: 0; padding: 28px; background: #F6F8F7; border-radius: 12px"><h3 style="margin: 0 0 10px; font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-size: 22px">Copying data between systems</h3><p style="margin: 0; color: #3E534D">Invoices, declarations, orders and bookings typed in by hand, one field at a time.</p></div>
-<div style="flex: 1 1 260px; min-width: 0; padding: 28px; background: #F6F8F7; border-radius: 12px"><h3 style="margin: 0 0 10px; font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-size: 22px">Reading and preparing documents</h3><p style="margin: 0; color: #3E534D">Contracts, forms and reports that someone has to read, summarize and file.</p></div>
-<div style="flex: 1 1 260px; min-width: 0; padding: 28px; background: #F6F8F7; border-radius: 12px"><h3 style="margin: 0 0 10px; font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-size: 22px">Answering the same questions</h3><p style="margin: 0; color: #3E534D">Customer emails, guest messages and follow-ups that look almost identical every day.</p></div>
-</div>
-</div>
-</section>
+<section class="sec" id="how"><div class="w"><div class="rv"><p class="eb">How it works</p><h2>From one chat to hours saved.</h2></div>
+<div class="steps"><div class="st rv"><b>01</b><h3>A 20-minute chat</h3><p>We identify your most time-consuming process.</p></div>
+<div class="st rv" style="transition-delay:.12s"><b>02</b><h3>A small pilot</h3><p>We measure the real savings before you commit to anything.</p></div>
+<div class="st rv" style="transition-delay:.24s"><b>03</b><h3>Adopted by your team</h3><p>We train your people so the tool sticks, inside the tools you already use.</p></div></div></div></section>
 
-<section id="services" style="padding: 88px 24px">
-<div style="max-width: 1160px; margin: 0 auto">
-<p style="margin: 0 0 12px; font-size: 14px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: #0F6E56">Services</p>
-<h2 style="margin: 0 0 16px; font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-weight: 700; font-size: 40px; line-height: 1.15; letter-spacing: -0.8px; max-width: 720px">Start small, then grow what works</h2>
-<p style="margin: 0 0 40px; font-size: 19px; color: #3E534D; max-width: 720px">Clear, packaged offers, so you know what you get and what it takes before you commit.</p>
-<div style="display: flex; flex-wrap: wrap; gap: 20px">
-<div style="flex: 1 1 320px; min-width: 0; padding: 32px; background: #FFFFFF; border: 1px solid #D5E0DC; border-radius: 12px"><p style="margin: 0 0 8px; font-weight: 600; color: #0F6E56">01</p><h3 style="margin: 0 0 10px; font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-size: 24px">Automation audit</h3><p style="margin: 0; color: #3E534D">We map your processes and give you a ranked list of what to automate first, with estimated time savings. A low-risk way to begin.</p></div>
-<div style="flex: 1 1 320px; min-width: 0; padding: 32px; background: #FFFFFF; border: 1px solid #D5E0DC; border-radius: 12px"><p style="margin: 0 0 8px; font-weight: 600; color: #0F6E56">02</p><h3 style="margin: 0 0 10px; font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-size: 24px">Pilot automation</h3><p style="margin: 0; color: #3E534D">One workflow, delivered in one to three weeks, with a measurable result. You see it working on your own data before going further.</p></div>
-<div style="flex: 1 1 320px; min-width: 0; padding: 32px; background: #FFFFFF; border: 1px solid #D5E0DC; border-radius: 12px"><p style="margin: 0 0 8px; font-weight: 600; color: #0F6E56">03</p><h3 style="margin: 0 0 10px; font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-size: 24px">Full implementation</h3><p style="margin: 0; color: #3E534D">A set of connected automations, or an AI assistant built on your own documents and data, integrated with the tools you already use.</p></div>
-<div style="flex: 1 1 320px; min-width: 0; padding: 32px; background: #FFFFFF; border: 1px solid #D5E0DC; border-radius: 12px"><p style="margin: 0 0 8px; font-weight: 600; color: #0F6E56">04</p><h3 style="margin: 0 0 10px; font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-size: 24px">Ongoing care</h3><p style="margin: 0; color: #3E534D">Monitoring, fixes and new automations every month, so your systems keep working as your business changes.</p></div>
-<div style="flex: 1 1 320px; min-width: 0; padding: 32px; background: #FFFFFF; border: 1px solid #D5E0DC; border-radius: 12px"><p style="margin: 0 0 8px; font-weight: 600; color: #0F6E56">05</p><h3 style="margin: 0 0 10px; font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-size: 24px">Training and workshops</h3><p style="margin: 0; color: #3E534D">Hands-on sessions and webinars so your team knows how to use the new tools and actually adopts them.</p></div>
-</div>
-</div>
-</section>
+<section class="cta" id="contact"><div class="w rv"><h2>Which process eats most of your week?</h2><p style="color:#d6efe6;font-size:19px;margin:-14px 0 34px">Pick a time that suits you. Twenty minutes, no commitment, no jargon.</p><a class="btn" href="#book" data-book>Book a 20-minute chat</a></div></section>
 
-<section id="industries" style="padding: 88px 24px; background: #FFFFFF; border-top: 1px solid #D5E0DC; border-bottom: 1px solid #D5E0DC">
-<div style="max-width: 1160px; margin: 0 auto">
-<p style="margin: 0 0 12px; font-size: 14px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: #0F6E56">Industries</p>
-<h2 style="margin: 0 0 40px; font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-weight: 700; font-size: 40px; line-height: 1.15; letter-spacing: -0.8px; max-width: 720px">Built for document-heavy, detail-heavy work</h2>
-<div style="display: flex; flex-wrap: wrap; gap: 20px">
-<div style="flex: 1 1 340px; min-width: 0; padding: 28px; background: #F6F8F7; border-radius: 12px"><h3 style="margin: 0 0 8px; font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-size: 22px">Logistics, customs and warehousing</h3><p style="margin: 0; color: #3E534D">Document extraction into your ERP, automatic status updates to clients, and error checks before mistakes become fines.</p></div>
-<div style="flex: 1 1 340px; min-width: 0; padding: 28px; background: #F6F8F7; border-radius: 12px"><h3 style="margin: 0 0 8px; font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-size: 22px">Property and hospitality</h3><p style="margin: 0; color: #3E534D">Guest message replies, task assignment for cleaning teams, inventory alerts and review-response drafts.</p></div>
-<div style="flex: 1 1 340px; min-width: 0; padding: 28px; background: #F6F8F7; border-radius: 12px"><h3 style="margin: 0 0 8px; font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-size: 22px">Law, accounting and consulting</h3><p style="margin: 0; color: #3E534D">Contract and invoice reading, document summaries, deadline reminders and draft generation.</p></div>
-<div style="flex: 1 1 340px; min-width: 0; padding: 28px; background: #F6F8F7; border-radius: 12px"><h3 style="margin: 0 0 8px; font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-size: 22px">E-commerce and retail</h3><p style="margin: 0; color: #3E534D">Support assistants, order and stock sync, and bulk product descriptions.</p></div>
-<div style="flex: 1 1 340px; min-width: 0; padding: 28px; background: #F6F8F7; border-radius: 12px"><h3 style="margin: 0 0 8px; font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-size: 22px">Clinics and dental practices</h3><p style="margin: 0; color: #3E534D">Appointment reminders, fewer no-shows, intake forms and follow-up messages.</p></div>
-<div style="flex: 1 1 340px; min-width: 0; padding: 28px; background: #F6F8F7; border-radius: 12px"><h3 style="margin: 0 0 8px; font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-size: 22px">Manufacturing and distribution</h3><p style="margin: 0; color: #3E534D">Quote generation, purchase orders flowing into your systems, and weekly reports that build themselves.</p></div>
-</div>
-</div>
-</section>
+<section class="sec" id="client-login"><div class="w" style="max-width:480px">
+<p class="eb">Client area</p><h2 id="auth-title" style="font-size:40px;margin-bottom:12px">Sign in</h2>
+<p id="auth-sub" style="color:var(--m);margin:0 0 28px">Existing clients can sign in to reach their project area.</p>
+<div id="auth-card" class="card"><form id="auth-form" novalidate>
+<label for="auth-email">Email</label><input id="auth-email" type="email" autocomplete="email" placeholder="you@company.com" required>
+<div id="pw-wrap"><label for="auth-password">Password</label><input id="auth-password" type="password" autocomplete="current-password" placeholder="At least 8 characters" minlength="8"></div>
+<button id="auth-submit" type="submit">Sign in</button><p id="auth-msg" role="status" aria-live="polite"></p></form>
+<div class="links"><a href="#client-login" id="link-forgot">Forgot password?</a><a href="#client-login" id="link-toggle">Create an account</a></div></div>
+<div id="member-card" class="card" hidden><p style="margin:0 0 4px;font-weight:600;color:var(--g)">Signed in as</p>
+<p id="member-email" style="margin:0 0 20px;font-size:20px;font-weight:600;word-break:break-all"></p>
+<p style="margin:0 0 24px;color:var(--m)">Welcome to your client area. Project updates and documents will appear here.</p>
+<button id="auth-signout" type="button" class="ghost">Sign out</button></div></div></section>
 
-<section id="process" style="padding: 88px 24px; background: #0B3D33; color: #FFFFFF">
-<div style="max-width: 1160px; margin: 0 auto">
-<p style="margin: 0 0 12px; font-size: 14px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: #F2B84B">How we work</p>
-<h2 style="margin: 0 0 16px; font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-weight: 700; font-size: 40px; line-height: 1.15; letter-spacing: -0.8px; max-width: 720px">From first call to working automation</h2>
-<p style="margin: 0 0 40px; font-size: 19px; color: #CFE3DD; max-width: 720px">We start with one narrow process, prove it, and only then expand. Human review stays in place wherever accuracy matters.</p>
-<div style="display: flex; flex-wrap: wrap; gap: 20px">
-<div style="flex: 1 1 240px; min-width: 0; padding: 28px; border: 1px solid #2E6B5D; border-radius: 12px"><p style="margin: 0 0 8px; font-weight: 600; color: #F2B84B">Step 1</p><h3 style="margin: 0 0 10px; font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-size: 22px">Talk</h3><p style="margin: 0; color: #CFE3DD">A short call about your daily routine: which tasks repeat, where data gets copied by hand, what takes longer than it should.</p></div>
-<div style="flex: 1 1 240px; min-width: 0; padding: 28px; border: 1px solid #2E6B5D; border-radius: 12px"><p style="margin: 0 0 8px; font-weight: 600; color: #F2B84B">Step 2</p><h3 style="margin: 0 0 10px; font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-size: 22px">Map</h3><p style="margin: 0; color: #CFE3DD">We turn what we hear into numbers: hours spent, cost of errors, and the best first candidate for automation.</p></div>
-<div style="flex: 1 1 240px; min-width: 0; padding: 28px; border: 1px solid #2E6B5D; border-radius: 12px"><p style="margin: 0 0 8px; font-weight: 600; color: #F2B84B">Step 3</p><h3 style="margin: 0 0 10px; font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-size: 22px">Pilot</h3><p style="margin: 0; color: #CFE3DD">We build one workflow, test it on your real data, and measure the result before you decide on more.</p></div>
-<div style="flex: 1 1 240px; min-width: 0; padding: 28px; border: 1px solid #2E6B5D; border-radius: 12px"><p style="margin: 0 0 8px; font-weight: 600; color: #F2B84B">Step 4</p><h3 style="margin: 0 0 10px; font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-size: 22px">Scale and support</h3><p style="margin: 0; color: #CFE3DD">We hand over with documentation and training, check results after 30 days, and propose the next automation.</p></div>
-</div>
-</div>
-</section>
-
-<section id="experience" style="padding: 88px 24px">
-<div style="max-width: 1160px; margin: 0 auto">
-<p style="margin: 0 0 12px; font-size: 14px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: #0F6E56">Experience</p>
-<h2 style="margin: 0 0 40px; font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-weight: 700; font-size: 40px; line-height: 1.15; letter-spacing: -0.8px; max-width: 720px">What we have done before</h2>
-<div style="display: flex; flex-wrap: wrap; gap: 24px">
-<div style="flex: 1 1 480px; min-width: 0; padding: 36px; background: #FFFFFF; border: 1px solid #D5E0DC; border-radius: 12px">
-<h3 style="margin: 0 0 16px; font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-size: 24px">Operations and process side</h3>
-<ul style="margin: 0; padding-left: 22px; display: flex; flex-direction: column; gap: 12px; color: #3E534D">
-<li>Digital transformation project for a public utility company</li>
-<li>Planned and ran trainings, workshops and webinars</li>
-<li>Reduced the cost of operating supplies for JOAN Apartments</li>
-<li>Reworked cleaning-team protocols so apartments are prepared faster and more efficiently</li>
-<li>Manage logistics and customs documentation in an ERP, including re-exports, transit, and transfers between bonded and regular warehouses</li>
-</ul>
-</div>
-<div style="flex: 1 1 480px; min-width: 0; padding: 36px; background: #FFFFFF; border: 1px solid #D5E0DC; border-radius: 12px">
-<h3 style="margin: 0 0 16px; font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-size: 24px">AI and engineering side</h3>
-<ul style="margin: 0; padding-left: 22px; display: flex; flex-direction: column; gap: 12px; color: #3E534D">
-<li>Projects spanning classical machine learning, data science, smaller NLP models and the latest large language models</li>
-<li>Automated data-processing pipelines that deliver insights and visualizations to clients from different industries</li>
-<li>Custom agentic AI solutions for data processing, extraction and storage in legal work</li>
-</ul>
-</div>
-</div>
-</div>
-</section>
-
-<section id="about" style="padding: 88px 24px; background: #FFFFFF; border-top: 1px solid #D5E0DC; border-bottom: 1px solid #D5E0DC">
-<div style="max-width: 1160px; margin: 0 auto">
-<p style="margin: 0 0 12px; font-size: 14px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: #0F6E56">About</p>
-<h2 style="margin: 0 0 16px; font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-weight: 700; font-size: 40px; line-height: 1.15; letter-spacing: -0.8px; max-width: 760px">Two founders: one who knows your operations, one who builds the AI</h2>
-<p style="margin: 0 0 40px; font-size: 19px; color: #3E534D; max-width: 720px">Skopje and Madrid, in the same time zone and on the same page.</p>
-<div style="display: flex; flex-wrap: wrap; gap: 24px">
-<div style="flex: 1 1 480px; min-width: 0; display: flex; gap: 24px; align-items: flex-start; padding: 32px; background: #F6F8F7; border-radius: 12px">
-<div aria-hidden="true" style="flex: 0 0 72px; width: 72px; height: 72px; border-radius: 36px; background: #0F6E56; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-weight: 700; font-size: 30px">I</div>
-<div style="min-width: 0"><h3 style="margin: 0 0 4px; font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-size: 24px">Ivan</h3><p style="margin: 0 0 12px; font-weight: 600; color: #0F6E56">Co-founder, operations and clients</p><p style="margin: 0; color: #3E534D">A business major with experience in property operations, public-sector projects and international logistics. Ivan focuses on speeding up everyday tasks with AI, and on helping every client get time back with simple automation.</p></div>
-</div>
-<div style="flex: 1 1 480px; min-width: 0; display: flex; gap: 24px; align-items: flex-start; padding: 32px; background: #F6F8F7; border-radius: 12px">
-<div aria-hidden="true" style="flex: 0 0 72px; width: 72px; height: 72px; border-radius: 36px; background: #F2B84B; color: #0E2A25; display: flex; align-items: center; justify-content: center; font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-weight: 700; font-size: 30px">A</div>
-<div style="min-width: 0"><h3 style="margin: 0 0 4px; font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-size: 24px">Alek</h3><p style="margin: 0 0 12px; font-weight: 600; color: #0F6E56">Co-founder, AI engineering</p><p style="margin: 0; color: #3E534D">An AI engineer and PhD candidate in AI based in Madrid, with over five years of professional experience. Alek has seen clients go from hours and days of manual work to minutes once a solution goes live.</p></div>
-</div>
-</div>
-</div>
-</section>
-
-<section style="padding: 88px 24px">
-<div style="max-width: 860px; margin: 0 auto">
-<p style="margin: 0 0 12px; font-size: 14px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: #0F6E56">Questions</p>
-<h2 style="margin: 0 0 32px; font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-weight: 700; font-size: 40px; line-height: 1.15; letter-spacing: -0.8px">Questions owners ask us</h2>
-<div style="display: flex; flex-direction: column; gap: 12px">
-<details style="background: #FFFFFF; border: 1px solid #D5E0DC; border-radius: 12px; padding: 20px 24px"><summary style="font-weight: 600; font-size: 18px">What if the AI makes mistakes?</summary><p style="margin: 14px 0 0; color: #3E534D">We add human review steps and checks wherever accuracy matters, and we start with a small pilot so you can see it working on your own data first.</p></details>
-<details style="background: #FFFFFF; border: 1px solid #D5E0DC; border-radius: 12px; padding: 20px 24px"><summary style="font-weight: 600; font-size: 18px">Will this replace my employees?</summary><p style="margin: 14px 0 0; color: #3E534D">The aim is to remove repetitive work so people can spend time on things that need judgment, customers and growth.</p></details>
-<details style="background: #FFFFFF; border: 1px solid #D5E0DC; border-radius: 12px; padding: 20px 24px"><summary style="font-weight: 600; font-size: 18px">Is our data safe?</summary><p style="margin: 14px 0 0; color: #3E534D">We sign an NDA before we start, work with access controls, follow GDPR for EU clients, and can discuss EU-hosted or private deployment options.</p></details>
-<details style="background: #FFFFFF; border: 1px solid #D5E0DC; border-radius: 12px; padding: 20px 24px"><summary style="font-weight: 600; font-size: 18px">Can't we just use ChatGPT for this?</summary><p style="margin: 14px 0 0; color: #3E534D">It helps with one-off tasks. We build automations into your daily systems so they run reliably, securely and without anyone copying and pasting.</p></details>
-<details style="background: #FFFFFF; border: 1px solid #D5E0DC; border-radius: 12px; padding: 20px 24px"><summary style="font-weight: 600; font-size: 18px">What if we are not sure what to automate?</summary><p style="margin: 14px 0 0; color: #3E534D">That is what the automation audit is for. We map your processes and rank the opportunities, so you start with the one that pays back fastest.</p></details>
-</div>
-</div>
-</section>
-
-
-<section id="client-login" style="padding: 88px 24px; background: #FFFFFF; border-top: 1px solid #D5E0DC; border-bottom: 1px solid #D5E0DC">
-<div style="max-width: 460px; margin: 0 auto">
-<p style="margin: 0 0 12px; font-size: 14px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: #0F6E56">Client area</p>
-<h2 id="auth-title" style="margin: 0 0 12px; font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-weight: 700; font-size: 40px; line-height: 1.15; letter-spacing: -0.8px">Sign in</h2>
-<p id="auth-sub" style="margin: 0 0 28px; color: #3E534D">Existing clients can sign in to reach their project area.</p>
-
-<div id="auth-card" class="card">
-<form id="auth-form" novalidate>
-<label for="auth-email">Email</label>
-<input id="auth-email" type="email" autocomplete="email" placeholder="you@company.com" required>
-<div id="pw-wrap">
-<label for="auth-password">Password</label>
-<input id="auth-password" type="password" autocomplete="current-password" placeholder="At least 8 characters" minlength="8">
-</div>
-<button id="auth-submit" type="submit">Sign in</button>
-<p id="auth-msg" role="status" aria-live="polite"></p>
-</form>
-<div class="links">
-<a href="#client-login" id="link-forgot">Forgot password?</a>
-<a href="#client-login" id="link-toggle">Create an account</a>
-</div>
-</div>
-
-<div id="member-card" class="card" hidden>
-<p style="margin: 0 0 4px; font-weight: 600; color: #0F6E56">Signed in as</p>
-<p id="member-email" style="margin: 0 0 20px; font-size: 20px; font-weight: 600; word-break: break-all"></p>
-<p style="margin: 0 0 24px; color: #3E534D">Welcome to your client area. Project updates and documents will appear here.</p>
-<button id="auth-signout" type="button" class="ghost">Sign out</button>
-</div>
-</div>
-</section>
-
-<section id="contact" style="padding: 96px 24px; background: #0F6E56; color: #FFFFFF">
-<div style="max-width: 860px; margin: 0 auto; text-align: center">
-<h2 style="margin: 0 0 16px; font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-weight: 700; font-size: 44px; line-height: 1.1; letter-spacing: -1px">Which task does your team dread most?</h2>
-<p style="margin: 0 auto 32px; font-size: 20px; color: #E3F1EC; max-width: 620px">Tell us in a 20-minute call. We will tell you honestly whether we can automate it.</p>
-<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; margin-bottom: 32px">
-<a href="#contact" style="background: #F2B84B; color: #0E2A25; text-decoration: none; font-weight: 600; padding: 16px 30px; border-radius: 8px">Book a free intro call</a>
-</div>
-<p style="margin: 0 0 6px; font-size: 18px">[YOUR EMAIL]  ·  [YOUR PHONE]</p>
-<p style="margin: 0; color: #E3F1EC">Skopje, North Macedonia  ·  Madrid, Spain</p>
-</div>
-</section>
-
-<footer style="padding: 28px 24px; background: #0B3D33; color: #CFE3DD; font-size: 15px">
-<div style="max-width: 1160px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px">
-<span style="font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-weight: 700; color: #FFFFFF">Loomie</span>
-<span>AI automation for everyday business work</span>
-</div>
-</footer>
-
-</div>
-
+<dialog id="bk" aria-labelledby="bk-t"><div class="bk">
+<button class="bk-x" id="bk-x" aria-label="Close" type="button">&times;</button>
+<p class="eb" id="bk-st">Step 1 of 2</p><h2 id="bk-t">Book your 20-minute chat</h2>
+<section id="bk-s1"><p class="bk-sub">Tell us a little about you and your business, so we arrive prepared.</p>
+<form id="bk-f1" class="bk-g" novalidate>
+<label>Full name<input name="name" autocomplete="name"></label><label>Business name<input name="business" autocomplete="organization"></label>
+<label>Your role<input name="job_role" autocomplete="organization-title" placeholder="e.g. Managing partner"></label><label>Work email<input name="email" type="email" autocomplete="email" placeholder="you@company.com"></label>
+<label class="full">Phone number<input name="phone" type="tel" autocomplete="tel" placeholder="+389 70 000 000"></label>
+<p class="bk-e full" id="bk-e1" role="alert"></p><button class="btn full" type="submit">Choose a time</button></form></section>
+<section id="bk-s2" hidden><div class="bk-two"><div>
+<div class="bk-h"><button type="button" id="bk-prev" aria-label="Previous month">&lsaquo;</button><b id="bk-mon"></b><button type="button" id="bk-next" aria-label="Next month">&rsaquo;</button></div>
+<div class="bk-w"><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span><span>Su</span></div><div class="bk-d" id="bk-days"></div></div>
+<div><p class="bk-sub" style="margin:0 0 12px"><b>Available times</b> <span id="bk-tz"></span></p><div class="bk-s" id="bk-slots"></div></div></div>
+<p class="bk-pick" id="bk-pick" aria-live="polite"></p><p class="bk-e" id="bk-e2" role="alert"></p>
+<div class="bk-bt"><button type="button" class="bk-bk" id="bk-back">&larr; Back</button><button type="button" class="btn" id="bk-ok" disabled>Confirm booking</button></div></section>
+<section id="bk-s3" class="bk-done" hidden><div class="tick">&#10003;</div><p id="bk-sum" style="font-size:18px;margin:0 0 26px"></p><a class="btn" id="bk-gc" target="_blank" rel="noopener">Add to Google Calendar</a><br><button type="button" class="bk-bk" id="bk-close2">Close</button></section>
+</div></dialog>
+<footer>&copy; Loomie. Automation that gives your team its hours back.</footer>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
 <script>
 // 1. Paste your values from Supabase: Project Settings -> API
@@ -261,6 +176,7 @@ const $ = (id) => document.getElementById(id);
 const configured = !SUPABASE_URL.startsWith("YOUR_");
 const sb = configured ? supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY) : null;
 let mode = "signin"; // signin | signup | reset | recover
+let cooldown;
 
 const TEXT = {
   signin: ["Sign in", "Existing clients can sign in to reach their project area.", "Sign in"],
@@ -273,6 +189,7 @@ function say(text, kind) { const m = $("auth-msg"); m.textContent = text || ""; 
 
 function setMode(next) {
   mode = next; say("");
+  clearTimeout(cooldown); $("auth-submit").disabled = false;
   const t = TEXT[mode];
   $("auth-title").textContent = t[0]; $("auth-sub").textContent = t[1]; $("auth-submit").textContent = t[2];
   $("pw-wrap").hidden = mode === "reset";
@@ -301,7 +218,7 @@ $("auth-form").addEventListener("submit", async (e) => {
   const email = $("auth-email").value.trim(), password = $("auth-password").value;
   if (mode !== "recover" && !/^\S+@\S+\.\S+$/.test(email)) return say("Please enter a valid email address.", "err");
   if (mode !== "reset" && password.length < 8) return say("Password must be at least 8 characters.", "err");
-  const btn = $("auth-submit"); btn.disabled = true; say("One moment...");
+  const btn = $("auth-submit"); btn.disabled = true; say("One moment..."); let keepDisabled = false;
   try {
     let r;
     if (mode === "signin") r = await sb.auth.signInWithPassword({ email, password });
@@ -309,12 +226,16 @@ $("auth-form").addEventListener("submit", async (e) => {
     else if (mode === "reset") r = await sb.auth.resetPasswordForEmail(email, { redirectTo: location.origin + location.pathname });
     else r = await sb.auth.updateUser({ password });
     if (r.error) throw r.error;
-    if (mode === "signup" && !r.data.session) say("Check your email to confirm your account, then sign in.", "ok");
+    if (mode === "signup" && !r.data.session) {
+      keepDisabled = true; btn.textContent = "Check your email to confirm...";
+      say("We sent a confirmation link to " + email + ". Open it, then come back to sign in.", "ok");
+      cooldown = setTimeout(() => { btn.disabled = false; btn.textContent = TEXT[mode][2]; }, 30000);
+    }
     else if (mode === "reset") say("If that email has an account, a reset link is on its way.", "ok");
     else if (mode === "recover") { mode = "signin"; say("Password updated.", "ok"); }
     else say("");
   } catch (err) { say(err.message || "Something went wrong. Please try again.", "err"); }
-  btn.disabled = false;
+  if (!keepDisabled) btn.disabled = false;
 });
 
 $("auth-signout").addEventListener("click", async () => { if (sb) await sb.auth.signOut(); mode = "signin"; render(null); });
@@ -327,4 +248,66 @@ if (sb) {
   sb.auth.getSession().then(({ data }) => render(data.session));
 } else { setMode("signin"); }
 </script>
-</body></html>
+<script>
+const nav=document.getElementById("nav"),hero=document.querySelector(".hero");
+addEventListener("scroll",()=>nav.classList.toggle("s",scrollY>40),{passive:true});
+hero.addEventListener("mousemove",e=>{const r=hero.getBoundingClientRect();hero.style.setProperty("--x",(e.clientX-r.left)+"px");hero.style.setProperty("--y",(e.clientY-r.top)+"px")});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("on");io.unobserve(e.target)}}),{threshold:.15});
+document.querySelectorAll(".rv").forEach(el=>io.observe(el));
+const tb=[...document.querySelectorAll(".tl button")],tp=[...document.querySelectorAll(".tp")];
+tb.forEach((b,i)=>b.addEventListener("click",()=>tb.forEach((x,j)=>{x.setAttribute("aria-pressed",j===i);tp[j].hidden=j!==i})));
+</script>
+<script>(()=>{
+const TZ="Europe/Skopje",TZN="Skopje",OPEN=9,CLOSE=17,AHEAD=60,LEAD=2; // business hours 09:00-17:00, weekdays, 60 days ahead, 2h notice
+const $=id=>document.getElementById(id),dlg=$("bk"),pad=n=>String(n).padStart(2,"0");
+const F=new Intl.DateTimeFormat("en-GB",{weekday:"long",day:"numeric",month:"long",hour:"2-digit",minute:"2-digit",hourCycle:"h23",timeZone:TZ});
+let step=1,view,sel,slot,taken=new Set(),timer,busy=false;
+function parts(ts){const o={};new Intl.DateTimeFormat("en-US",{timeZone:TZ,hourCycle:"h23",year:"numeric",month:"numeric",day:"numeric",hour:"numeric",minute:"numeric",second:"numeric"}).formatToParts(new Date(ts)).forEach(p=>o[p.type]=+p.value);return o}
+const wallMs=o=>Date.UTC(o.year,o.month-1,o.day,o.hour,o.minute,o.second);
+function zoned(y,m,d,h,mi){const g=Date.UTC(y,m,d,h,mi),off=wallMs(parts(g))-g;let t=g-off;const off2=wallMs(parts(t))-t;if(off2!==off)t=g-off2;return t}
+const today=()=>{const o=parts(Date.now());return{y:o.year,m:o.month-1,d:o.day}};
+const dayNum=(y,m,d)=>Date.UTC(y,m,d)/864e5;
+function slotsOf(y,m,d){const r=[];for(let h=OPEN;h<CLOSE;h++)for(const mi of[0,30]){const t=zoned(y,m,d,h,mi);r.push({t,l:pad(h)+":"+pad(mi),ok:t>Date.now()+LEAD*36e5&&!taken.has(t)})}return r}
+function dayState(y,m,d){const t=today(),n=dayNum(y,m,d)-dayNum(t.y,t.m,t.d),wd=new Date(Date.UTC(y,m,d)).getUTCDay();if(n<0||n>AHEAD||wd===0||wd===6)return"off";return slotsOf(y,m,d).some(s=>s.ok)?"ok":"full"}
+function autoPick(){const t=today();for(let i=0;i<=AHEAD;i++){const x=new Date(Date.UTC(t.y,t.m,t.d+i)),y=x.getUTCFullYear(),m=x.getUTCMonth(),d=x.getUTCDate();if(dayState(y,m,d)==="ok"){sel={y,m,d};view={y,m};return}}view={y:t.y,m:t.m}}
+function drawCal(){const{y,m}=view,t=today(),e=parts(Date.now()+AHEAD*864e5);
+$("bk-mon").textContent=new Intl.DateTimeFormat("en-GB",{month:"long",year:"numeric",timeZone:"UTC"}).format(Date.UTC(y,m,1));
+$("bk-prev").disabled=y*12+m<=t.y*12+t.m;$("bk-next").disabled=y*12+m>=e.year*12+e.month-1;
+const first=(new Date(Date.UTC(y,m,1)).getUTCDay()+6)%7,len=new Date(Date.UTC(y,m+1,0)).getUTCDate();let h="";
+for(let i=0;i<first;i++)h+="<i></i>";
+for(let d=1;d<=len;d++){const s=dayState(y,m,d),on=sel&&sel.y===y&&sel.m===m&&sel.d===d;h+=`<button type="button" class="${s}${on?" on":""}" data-d="${d}" ${s==="ok"?"":"disabled"}${s==="full"?' title="Fully booked"':""}>${d}</button>`}
+$("bk-days").innerHTML=h}
+function drawSlots(){const b=$("bk-slots");if(!sel){b.innerHTML='<p class="hint">Choose a day to see available times.</p>';return}
+b.innerHTML=slotsOf(sel.y,sel.m,sel.d).map(s=>`<button type="button" class="${s.ok?"":"x"}${slot===s.t?" on":""}" data-t="${s.t}" ${s.ok?"":'disabled title="Already booked"'}>${s.l}</button>`).join("")}
+function redraw(){drawCal();drawSlots();$("bk-pick").textContent=slot?F.format(slot)+" ("+TZN+" time)":"Select a time to continue.";const b=$("bk-ok");b.disabled=!slot||busy;b.textContent=busy?"Reserving...":"Confirm booking"}
+async function load(){if(!configured||!sb)return;const{data,error}=await sb.rpc("get_taken_slots",{from_ts:new Date().toISOString(),to_ts:new Date(Date.now()+(AHEAD+2)*864e5).toISOString()});
+if(error||!data)return;taken=new Set(data.map(r=>new Date(r.slot_start).getTime()));if(slot&&taken.has(slot))slot=null;if(step===2)redraw()}
+function setStep(n){step=n;[1,2,3].forEach(i=>$("bk-s"+i).hidden=i!==n);$("bk-st").textContent=n===3?"All set":"Step "+n+" of 2";
+$("bk-t").textContent=n===1?"Book your 20-minute chat":n===2?"Pick a day and time":"You’re booked!";
+if(n===2){if(!sel)autoPick();$("bk-tz").textContent="· "+TZN+" time";redraw();load()}dlg.scrollTop=0}
+function openBk(){sel=null;slot=null;$("bk-e1").textContent="";$("bk-e2").textContent="";setStep(1);if(!dlg.open)dlg.showModal();load();clearInterval(timer);timer=setInterval(()=>{if(step===2)load()},20000)}
+document.querySelectorAll("[data-book]").forEach(a=>a.addEventListener("click",e=>{e.preventDefault();openBk()}));
+dlg.addEventListener("close",()=>clearInterval(timer));dlg.addEventListener("click",e=>{if(e.target===dlg)dlg.close()});
+$("bk-x").onclick=$("bk-close2").onclick=()=>dlg.close();$("bk-back").onclick=()=>setStep(1);
+$("bk-prev").onclick=()=>{view=view.m?{y:view.y,m:view.m-1}:{y:view.y-1,m:11};drawCal()};
+$("bk-next").onclick=()=>{view=view.m<11?{y:view.y,m:view.m+1}:{y:view.y+1,m:0};drawCal()};
+$("bk-days").addEventListener("click",e=>{const b=e.target.closest("button[data-d]");if(!b||b.disabled)return;sel={y:view.y,m:view.m,d:+b.dataset.d};slot=null;redraw();load();$("bk-slots").scrollIntoView({behavior:"smooth",block:"nearest"})});
+$("bk-slots").addEventListener("click",e=>{const b=e.target.closest("button[data-t]");if(!b||b.disabled)return;slot=+b.dataset.t;redraw()});
+$("bk-f1").addEventListener("submit",e=>{e.preventDefault();const f=e.target,v=n=>f[n].value.trim(),er=$("bk-e1");
+if(v("name").length<2)return er.textContent="Please enter your full name.";
+if(!v("business"))return er.textContent="Please enter your business name.";
+if(!v("job_role"))return er.textContent="Please enter your role.";
+if(!/^\S+@\S+\.\S+$/.test(v("email")))return er.textContent="Please enter a valid email address.";
+if(!/^[+()\d\s-]{6,25}$/.test(v("phone"))||v("phone").replace(/\D/g,"").length<6)return er.textContent="Please enter a valid phone number.";
+er.textContent="";setStep(2)});
+$("bk-ok").addEventListener("click",async()=>{if(!slot||busy)return;const er=$("bk-e2");er.textContent="";
+if(!configured||!sb)return er.textContent="Booking isn’t connected yet. Add your Supabase details to the page.";
+const f=$("bk-f1"),v=n=>f[n].value.trim(),t=slot;busy=true;redraw();
+const{error}=await sb.from("bookings").insert({slot_start:new Date(t).toISOString(),name:v("name"),business:v("business"),job_role:v("job_role"),email:v("email"),phone:v("phone")});
+busy=false;
+if(error){er.textContent=error.code==="23505"?"Sorry, someone just booked that time. Please pick another one.":"Something went wrong. Please try again.";if(error.code==="23505"){taken.add(t);slot=null}redraw();return}
+taken.add(t);const iso=x=>new Date(x).toISOString().replace(/[-:]|\.\d{3}/g,"");
+$("bk-sum").textContent=F.format(t)+" ("+TZN+" time). We’ll email "+v("email")+" with the meeting details.";
+$("bk-gc").href="https://calendar.google.com/calendar/render?action=TEMPLATE&text="+encodeURIComponent("20-minute chat with Loomie")+"&dates="+iso(t)+"/"+iso(t+20*6e4);
+f.reset();slot=null;setStep(3)});
+})();</script></body></html>
